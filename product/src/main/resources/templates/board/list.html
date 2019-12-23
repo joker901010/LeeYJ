@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>상품 목록</title>
+		</head>
+	<body>
+		<h2>상품 목록</h2>
+		<table border="1">
+			<tr>
+				<th>상품ID번호</th>
+				<th>상품이미지</th>
+				<th>상품명</th>
+				<th>가격</th>
+			</tr>
+			<c:forEach var="row" items="${list}">
+			<tr>
+				<td>
+					${row.productId}
+				</td>
+				<td>
+					<a href="/board/detail/${row.productId}">
+						<img src="" width="120px" height="110px">
+					</a>
+				</td>
+			</tr>
+		<tr>
+			<td>
+				<a href="detail/${row.productId}">
+					<img src="${row.productUrl}" width="120px" height="110px">
+				</a>
+			</td>
+			<td>
+				value="${vo.productName}" pattern="###,###,###"
+			</td>
+		</tr>
+		</table>
+	</body>
+</html>

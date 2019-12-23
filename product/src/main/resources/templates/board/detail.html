@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>상품 상세정보</title>
+	</head>
+	<body>
+		<h2>상품 상세정보</h2>
+		<table border="1">
+			<tr>
+				<td>
+					<img src="/static/image/${vo.productUrl}" width="350" height="300">
+				</td>
+				<td>
+					<table border="1" style="height: 300px; width: 400px;">
+						<tr align="center">
+							<td>상품명</td>
+							<td>${vo.productName}</td>
+						</tr>
+						<tr align="center">
+							<td>가격</td>
+							<td>value="${vo.productName}" pattern="###,###,###"</td>
+						</tr>
+						<tr align="center">
+							<td>상품소개</td>
+							<td>${vo.productPrice}</td>
+						</tr>
+						<tr align="center">
+							<td colspan="2">
+								<form name="form1" method="post" action="insert">
+									<input type="hidden" name="productId" value="${vo.productId}">
+									
+										<div class="section_origin_area" id="noOptionSelectDiv">
+								            <h2 class="tit_options">수량</h2>
+								            <div class="item-originpd">
+								                <span class="num-ctrl uxequnatity-ctrl">
+								                    <button class="bt_increase"><span class="blind">수량증가</span></button>
+								                    <button class="bt_decrease"><span class="blind">수량감소</span></button>
+								                    <input class="num" type="text" maxlength="10" title="수량" value="1">
+								                </span>
+								            </div>
+								            <button class="bt_select">선택</button>
+								        </div>
+									
+									<input type="submit" value="장바구니에 담기">
+								</form>
+								<a href="/board/list">상품목록</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="product">
+	<select id="listProduct" resultType="org.dsu.dc.domain.ProductVO">
+		SELECT
+			product_id AS productId,
+			product_name AS productName,
+			product_price AS productPrice,
+			product_desc AS productDesc,
+			product_url AS productUrl
+		FROM tbl_product
+		ORDER BY product_name
+	</select>
+	
+	<select id="deatilProduct" resultType="org.dsu.dc.domain.ProductVO">
+		SELECT
+			product_id AS productId,
+			product_name AS productName,
+			product_price AS productPrice,
+			product_desc AS productDesc,
+			product_url AS productUrl
+		FROM tbl_product
+		WHERE product_id = #{productId}
+	</select>
+</mapper>
